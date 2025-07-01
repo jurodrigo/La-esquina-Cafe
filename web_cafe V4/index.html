@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Esquina</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body class="bg-esquina">
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light px-3">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo.png" alt="Logo La Esquina"> 
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Pedido</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="perfil3.0.html">Bienvenido Juan</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ <!-- Banner principal como sección -->
+<section class="banner-principal text-white text-center d-flex align-items-center justify-content-center"> 
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+  <div class="position-relative text-content container px-5">
+    <h1 class="display-4 fw-bold text-wrap" style="max-width: 700px; margin: 0 auto;">
+      Pedí tu café por aquí y no hagas más filas
+    </h1>
+    <a href="menu.html" class="btn btn-banner m-3 px-5 py-3 fs-4">Pedir</a>
+  </div>
+</section>
+
+
+<!-- Sección de Destacados -->
+<section class="container py-3">
+  <h2 class="text-center mb-4">Productos Destacados</h2>
+  <div class="row g-4 justify-content-center text-center">
+    
+    <div class="col-md-4">
+      <div class="producto-destacado mx-auto">
+        <img src="img/taza1.png" class="img-fluid rounded img-producto" alt="Café Especial">
+        <h5 class="mt-2">Café de Autor</h5>
+        <p class="text-muted mb-0">Elaborado con granos seleccionados y tueste artesanal.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="producto-destacado mx-auto">
+        <img src="img/cafe_y_medialuna.png" class="img-fluid rounded img-producto" alt="Combo del Día">
+        <h5 class="mt-2">Combo del Día</h5>
+        <p class="text-muted mb-0">Un café + una medialuna a precio especial.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="producto-destacado mx-auto">
+        <img src="img/cafe_frio.png" class="img-fluid rounded img-producto" alt="Café Frío">
+        <h5 class="mt-2">Café Frío</h5>
+        <p class="text-muted mb-0">Ideal para refrescar tus tardes de verano.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Sección de Testimonios con Carrusel -->
+<!-- Sección de Testimonios con Carrusel Automático -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Lo que dicen nuestros clientes</h2>
+    <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+      <div class="carousel-inner text-center">
+
+        <!-- Testimonio 1 -->
+        <div class="carousel-item active">
+          <blockquote class="blockquote">
+            <p class="mb-3">"Excelente atención y café delicioso. ¡Pido siempre por la app!"</p>
+            <footer class="blockquote-footer">Lucía M., clienta frecuente</footer>
+          </blockquote>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote">
+            <p class="mb-3">"Nunca más hice fila. Pido desde el bondi y lo retiro listo."</p>
+            <footer class="blockquote-footer">Carlos G., usuario de la app</footer>
+          </blockquote>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote">
+            <p class="mb-3">"Me encanta el combo del día. Rápido y riquísimo."</p>
+            <footer class="blockquote-footer">Ana T., clienta habitual</footer>
+          </blockquote>
+        </div>
+
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="text-center py-4 footer-esquina">
+    <nav class="footer-nav">
+      <ul class="list-inline mb-1">
+        <li class="list-inline-item"><a href="#">Legales</a></li>
+        <li class="list-inline-item"><a href="#">Nosotros</a></li>
+        <li class="list-inline-item"><a href="#">Ayuda</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
