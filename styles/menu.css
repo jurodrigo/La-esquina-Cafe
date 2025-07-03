@@ -79,4 +79,26 @@ aside.sticky-menu {
 }
 
 
+.imagen-con-icono {
+  position: relative;
+}
+
+.icono-corazon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #dc3545;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icono-corazon:hover {
+  transform: scale(1.2);
+  color: #b02a37;
+}
+
 
