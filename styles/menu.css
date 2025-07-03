@@ -102,3 +102,15 @@ aside.sticky-menu {
 }
 
 
+.contador-cantidad {
+  width: 50%;
+  min-width: 120px;
+}
+
+#carrito-toggle {
+  z-index: 1055;
+}
+
+#carrito-cantidad {
+  font-size: 0.7rem;
+}
