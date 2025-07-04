@@ -252,134 +252,64 @@
 
 
   <!-- Footer -->
-  <footer class="text-center py-4 footer-esquina">
-    <nav class="footer-nav">
-      <ul class="list-inline mb-1">
-        <li class="list-inline-item"><a href="#">Legales</a></li>
-        <li class="list-inline-item"><a href="#">Nosotros</a></li>
-        <li class="list-inline-item"><a href="ayuda.html">Ayuda</a></li>
-      </ul>
-    </nav>
+  <footer class="footer-esquina py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-3">
+            <img src="img/logo.png" alt="Logo La Esquina" class="footer-logo me-2">
+            <span class="h5 mb-0 text-primary fw-bold">La Esquina</span>
+          </div>
+          <p class="text-muted mb-3">El mejor café artesanal de la ciudad. Calidad premium sin esperas.</p>
+          <div class="social-links">
+            <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h6 class="fw-bold mb-3">Enlaces</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+            <li class="mb-2"><a href="menu.html" class="footer-link">Menú</a></li>
+            <li class="mb-2"><a href="ayuda.html" class="footer-link">Ayuda</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3">Información</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">Términos y Condiciones</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Política de Privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3">Contacto</h6>
+          <div class="contact-info">
+            <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i>Av. Siempre Viva 123, CABA</p>
+            <p class="mb-2"><i class="fas fa-phone me-2 text-primary"></i>+54 9 11 1234 5678</p>
+            <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i>info@laesquina.com</p>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 text-muted small">
+            © 2024 La Esquina. Todos los derechos reservados.
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0 text-muted small">
+            <strong>Grupo 9:</strong> Rodrigo, Juan Manuel Meluzio, Carolina Degrossi, Maria Fernanda, Di Nocera Maria Virginia, Tomas Navatta
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Script filtro -->
-  <script>
-    document.querySelectorAll('.categoria-link').forEach(link => {
-      link.addEventListener('click', function () {
-        document.querySelectorAll('.categoria-link').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-        const categoria = this.getAttribute('data-categoria');
-        document.querySelectorAll('.producto').forEach(prod => {
-          if (categoria === 'todos' || prod.getAttribute('data-categoria').includes(categoria)) {
-            prod.style.display = '';
-          } else {
-            prod.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
-  <script>
-  // Manejo de cantidad
-  document.querySelectorAll('.producto').forEach(producto => {
-    const input = producto.querySelector('.cantidad-input');
-    const btnSumar = producto.querySelector('.btn-sumar');
-    const btnRestar = producto.querySelector('.btn-restar');
 
-    btnSumar.addEventListener('click', () => {
-      input.value = parseInt(input.value) + 1;
-    });
-
-    btnRestar.addEventListener('click', () => {
-      if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
-    });
-  });
-
-  // Carrito
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
- const actualizarCarrito = () => {
-  const lista = document.getElementById('carrito-lista');
-  const total = document.getElementById('carrito-total');
-  const badge = document.getElementById('carrito-cantidad');
-  const mensajeVacio = document.getElementById('mensaje-vacio');
-
-  lista.innerHTML = '';
-  let totalPrecio = 0;
-  let cantidadTotal = 0;
-
-  if (carrito.length === 0) {
-    mensajeVacio.style.display = 'block';
-  } else {
-    mensajeVacio.style.display = 'none';
-  }
-
-  carrito.forEach(item => {
-    const li = document.createElement('li');
-    li.className = 'list-group-item d-flex justify-content-between align-items-center';
-    li.innerHTML = `
-      <span>${item.nombre} × ${item.cantidad}</span>
-      <span>$${item.precio * item.cantidad}</span>
-    `;
-    lista.appendChild(li);
-    totalPrecio += item.precio * item.cantidad;
-    cantidadTotal += item.cantidad;
-  });
-
-  total.textContent = totalPrecio;
-  badge.textContent = cantidadTotal;
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-};
-
-
-  document.querySelectorAll('.btn-pedir').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const card = btn.closest('.producto');
-      const nombre = card.querySelector('.card-title').textContent.trim();
-      const cantidad = parseInt(card.querySelector('.cantidad-input').value);
-      const precioTexto = card.querySelector('.precio').textContent;
-      const precio = parseInt(precioTexto.replace('$', '').trim());
-
-
-      const existente = carrito.find(p => p.nombre === nombre);
-      if (existente) {
-        existente.cantidad += cantidad;
-      } else {
-        carrito.push({ nombre, cantidad, precio });
-      }
-
-      actualizarCarrito();
-    });
-  });
-
-  actualizarCarrito();
-  document.getElementById('btn-vaciar-carrito').addEventListener('click', () => {
-  carrito = [];
-  actualizarCarrito();
-});
-document.querySelector('.btn-success').addEventListener('click', () => {
-  if (carrito.length === 0) {
-    Swal.fire({
-      icon: 'info',
-      title: 'Carrito vacío',
-      text: 'Agrega productos antes de confirmar tu pedido.',
-      confirmButtonColor: '#d33'
-    });
-    return;
-  }
-
-  Swal.fire({
-    icon: 'success',
-    title: '¡Compra exitosa!',
-    text: 'Tu pedido ha sido confirmado. En breve comenzaremos a prepararlo.',
-    confirmButtonText: 'Aceptar',
-    confirmButtonColor: '#198754'
-  }).then(() => {
-    carrito = [];
-    actualizarCarrito();
-  });
-});
-</script>
+  <!-- Scripts -->
+  <script src="./js/menu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

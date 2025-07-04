@@ -115,6 +115,7 @@ aside.sticky-menu {
   font-size: 0.7rem;
 }
 
+
 /* En pantallas grandes (desde 768px) */
 @media (min-width: 768px) {
   .sticky-menu {
