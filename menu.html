@@ -14,43 +14,42 @@
 <body class="bg-esquina">
 
   <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-light px-3">
-    <a class="navbar-brand" href="index.html">
-      <img src="img/logo.png" alt="Logo La Esquina">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link active" href="menu.html">Pedido</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="perfil3.0.html">Bienvenido Juan</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Estado del pedido -->
-  <div class="container mt-4">
-    <a href="estado-pedido.html" class="text-decoration-none">
-      <div class="alert alert-success d-flex align-items-center shadow-sm estado-pedido-alert" role="alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="24" fill="currentColor">
-          <use xlink:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.svg#check-circle-fill"/>
-        </svg>
-        <div>
-          ✅ Tu pedido está en preparación. Estará listo en aproximadamente: <strong>7 minutos</strong>.
-        </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light px-3">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo La Esquina">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="menu.html">Pedido</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="perfil.html">Bienvenido Juan</a></li>
+        </ul>
       </div>
-    </a>
-  </div>
-
-  <!-- Contenido principal -->
+    </nav>
+  </header>
+  <!-- Estado del pedido -->
+    <div class="container mt-4">
+      <a href="estado-pedido.html" class="text-decoration-none">
+        <div class="alert alert-success d-flex align-items-center shadow-sm estado-pedido-alert" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" fill="currentColor">
+            <use xlink:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.svg#check-circle-fill"/>
+          </svg>
+          <div>
+            ✅ Tu pedido está en preparación. Estará listo en aproximadamente: <strong>7 minutos</strong>.
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- Contenido principal -->
   <main class="flex-grow-1">
     <section class="container py-5">
       <div class="row">
-
-        <!-- Menú lateral -->
+          <!-- Menú lateral -->
         <aside class="col-md-3 mb-4 sticky-menu">
           <h2 class="mb-3">Menu</h2>
           <h5 class="fw-bold mb-3">CATALOGO</h5>
@@ -67,8 +66,7 @@
             <a class="categoria-link" data-categoria="pedidoAnteriormente">Pedidos Anteriormente</a>
         </nav>
         </aside>
-
-        <!-- Productos -->
+          <!-- Productos -->
         <div class="col-md-9">
           <div class="row g-4" id="productos-lista">
 
@@ -228,29 +226,29 @@
     </section>
   </main>
   <!-- Carrito flotante -->
-<div id="carrito-toggle" class="position-fixed bottom-0 end-0 m-4">
-  <button class="btn btn-danger rounded-circle p-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
-    <i class="fa-solid fa-cart-shopping fs-4"></i>
-    <span id="carrito-cantidad" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-danger">0</span>
-  </button>
-</div>
+  <div id="carrito-toggle" class="position-fixed bottom-0 end-0 m-4">
+    <button class="btn btn-danger rounded-circle p-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
+      <i class="fa-solid fa-cart-shopping fs-4"></i>
+      <span id="carrito-cantidad" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-danger">0</span>
+    </button>
+  </div>
 
 <!-- Carrito Bootstrap -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title">Tu pedido</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-  </div>
-  <div class="offcanvas-body">
-    <ul id="carrito-lista" class="list-group mb-3"></ul>
-    <p id="mensaje-vacio" class="text-center text-muted">Este carrito está vacío</p>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Tu pedido</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul id="carrito-lista" class="list-group mb-3"></ul>
+      <p id="mensaje-vacio" class="text-center text-muted">Este carrito está vacío</p>
 
-    <div class="text-end fw-bold">Total: $<span id="carrito-total">0</span></div>
-    <button class="btn btn-success w-100 mt-3">Confirmar pedido</button>
-<button id="btn-vaciar-carrito" class="btn btn-outline-danger w-100 mt-2">Vaciar carrito</button>
+      <div class="text-end fw-bold">Total: $<span id="carrito-total">0</span></div>
+      <button class="btn btn-success w-100 mt-3">Confirmar pedido</button>
+  <button id="btn-vaciar-carrito" class="btn btn-outline-danger w-100 mt-2">Vaciar carrito</button>
 
+    </div>
   </div>
-</div>
 
 
   <!-- Footer -->

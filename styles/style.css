@@ -107,11 +107,3 @@ html, body {
   width: 100%;
   border-radius: 10px;
 }
-
-#carrito-toggle {
-  z-index: 1055;
-}
-
-#carrito-cantidad {
-  font-size: 0.7rem;
-}

@@ -1,0 +1,119 @@
+/* Fondo general */
+body {
+  background-color: #f4ebe2;
+  font-family: 'Montserrat', sans-serif;
+  color: #3e2c23;
+  margin: 0;
+}
+
+/* Título principal */
+h2 {
+  font-weight: bold;
+  color: #3e2c23;
+}
+
+/* Menú lateral - Catálogo */
+.categoria-link {
+  cursor: pointer;
+  padding: 8px 12px;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: #5d4633;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.categoria-link:hover {
+  background: #e5e1dd;
+}
+
+.categoria-link.active {
+  font-weight: bold;
+  color: #52705A;
+  border-left: 4px solid #52705A;
+  background: #f7f3ee;
+}
+
+/* Card general */
+.card {
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* Inputs */
+input.form-control[disabled] {
+  background-color: #f1f4f9;
+  border: 1px solid #ccc;
+  color: #5d4633;
+}
+
+/* Botones */
+.btn-pago,
+.btn-puntos {
+  background-color: #52705A;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-pago:hover,
+.btn-puntos:hover {
+  background-color: #405c49;
+}
+
+/* Secciones del perfil */
+.perfil-card {
+  margin-bottom: 1.5rem;
+}
+
+.perfil-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Badge de puntos */
+.badge.bg-success {
+  font-size: 1.1rem;
+  padding: 6px 12px;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .categoria-link {
+    padding: 6px 10px;
+  }
+}
+
+/* Sticky footer layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}

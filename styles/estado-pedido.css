@@ -120,7 +120,7 @@ html, body {
   left: 0;
   height: 4px;
   background-color: #52705A;
-  width: 45%; /* Preciso: 2 pasos + 1/4 de paso */
+  width: 45%; 
   z-index: 1;
 }
 
@@ -140,7 +140,7 @@ html, body {
   height: 40px;
   line-height: 40px;
   border-radius: 50%;
-  background-color: #f4ebe2; /* color de fondo general */
+  background-color: #f4ebe2; 
   color: #555;
   font-weight: bold;
   margin: 0 auto;
